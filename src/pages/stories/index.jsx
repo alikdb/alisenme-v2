@@ -1,5 +1,10 @@
+import OpacityContent from "~/components/animated/opacity";
 const Stories = () => {
-  return <>Stories</>;
+  return (
+    <OpacityContent>
+      <div>Stories</div>
+    </OpacityContent>
+  );
 };
 
 export default Stories;

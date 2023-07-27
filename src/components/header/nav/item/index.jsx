@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import PropTypes from "prop-types"
 import cn from "classnames";
 
 const NavbarItem = ({ item }) => {
@@ -19,3 +20,10 @@ const NavbarItem = ({ item }) => {
 };
 
 export default NavbarItem;
+
+NavbarItem.propTypes = {
+  item: PropTypes.shape({
+    path: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+  })
+}

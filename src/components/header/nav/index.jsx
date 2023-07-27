@@ -1,14 +1,14 @@
-import { useState } from "react";
-import { HiOutlineMenuAlt3 } from "react-icons/hi";
+import { HiOutlineMenuAlt3, HiOutlineX } from "react-icons/hi";
 import NavbarItem from "./item";
 import { setMobileNavbarVisible } from "~/stores/app/actions";
+import { useMobileNavbarVisible } from "~/stores/app/hooks";
 import menus from "~/utils/menus";
 const Navbar = () => {
-  const [menuActive, setMenuActive] = useState(false);
+  const navbarVisible = useMobileNavbarVisible();
 
-  const handleMenu = () => {
-    setMenuActive(!menuActive);
-    setMobileNavbarVisible(!menuActive);
+  const handleMenu = (status) => {
+    //setMenuActive(!menuActive);
+    setMobileNavbarVisible(status);
   };
 
   return (
@@ -18,12 +18,20 @@ const Navbar = () => {
           <NavbarItem key={item.path} item={item} />
         ))}
       </nav>
-      <div>
-        <HiOutlineMenuAlt3
-          size={30}
-          className="cursor-pointer"
-          onClick={() => handleMenu()}
-        />
+      <div className="block md:hidden">
+        {!navbarVisible ? (
+          <HiOutlineMenuAlt3
+            size={30}
+            className="cursor-pointer"
+            onClick={() => handleMenu(true)}
+          />
+        ) : (
+          <HiOutlineX
+            size={30}
+            className="cursor-pointer"
+            onClick={() => handleMenu(false)}
+          />
+        )}
       </div>
     </>
   );

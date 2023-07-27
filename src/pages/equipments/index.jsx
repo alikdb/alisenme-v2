@@ -1,5 +1,10 @@
+import OpacityContent from "~/components/animated/opacity";
 const Equipments = () => {
-  return <>equipments</>;
+  return (
+    <OpacityContent>
+      <div>equipments</div>
+    </OpacityContent>
+  );
 };
 
 export default Equipments;

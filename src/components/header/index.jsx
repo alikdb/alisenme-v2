@@ -3,10 +3,10 @@ import Navbar from "./nav";
 import { Link } from "react-router-dom";
 import Typed from "react-typed";
 import { useMobileNavbarVisible } from "~/stores/app/hooks";
-
 import MobileNavbar from "./nav/mobile";
 import { useLocation } from "react-router-dom";
 import { setMobileNavbarVisible } from "~/stores/app/actions";
+import { AnimatePresence } from "framer-motion";
 export default function Header() {
   const mobileNavbarVisible = useMobileNavbarVisible();
   const location = useLocation();
@@ -47,7 +47,9 @@ export default function Header() {
           </div>
         </div>
       </div>
-      {mobileNavbarVisible ? <MobileNavbar /> : ""}
+      <AnimatePresence>
+        {mobileNavbarVisible ? <MobileNavbar /> : ""}
+      </AnimatePresence>
     </header>
   );
 }
