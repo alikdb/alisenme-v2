@@ -2,29 +2,21 @@ import { useState } from "react";
 import OpacityContent from "~/components/animated/opacity";
 import BlogItem from "~/components/blog/item";
 import Button from "~/components/button";
+import Title from "~/components/title";
 const Blog = () => {
   const [loading, setLoading] = useState(false);
+
   const loadMore = () => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
     }, 5000);
-  }
+  };
 
   return (
     <OpacityContent className="container mx-auto px-5 pt-16">
-      <div className="flex justify-start pb-5">
-        <h1 className="text-3xl font-bold">Yazılarım</h1>
-      </div>
-      <div className="grid grid-cols-2 gap-5 pb-5">
-        <BlogItem />
-        <BlogItem />
-        <BlogItem />
-        <BlogItem />
-        <BlogItem />
-        <BlogItem />
-        <BlogItem />
-        <BlogItem />
+      <Title title="Blog" />
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 pb-5">
         <BlogItem />
         <BlogItem />
         <BlogItem />
