@@ -5,6 +5,7 @@ import Blog from "~/pages/blog";
 import Equipments from "~/pages/equipments";
 import Stories from "~/pages/stories";
 import BlogInner from "~/pages/blog-inner";
+import Bookmarks from "~/pages/bookmarks";
 
 const routes = createBrowserRouter([
   {
@@ -28,8 +29,12 @@ const routes = createBrowserRouter([
         element: <Stories />,
       },
       {
-        path: "blog/:slug",
+        path: "/blog/:slug",
         element: <BlogInner />,
+      },
+      {
+        path: "/bookmarks",
+        element: <Bookmarks />,
       },
     ],
   },

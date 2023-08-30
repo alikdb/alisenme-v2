@@ -4,6 +4,10 @@ const menus = [
     name: "Blog",
   },
   {
+    path: "/bookmarks",
+    name: "Yer İşaretleri",
+  },
+  {
     path: "/equipments",
     name: "Ekipmanlar",
   },
